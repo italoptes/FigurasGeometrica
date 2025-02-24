@@ -1,0 +1,43 @@
+package interfaces3;
+
+import org.jetbrains.annotations.NotNull;
+
+import java.util.Objects;
+
+public class Quadrados implements FigurasGeometricas{
+    private double lado;
+
+    public Quadrados(double lado) {
+        this.lado = lado;
+    }
+
+    @Override
+    public double getAreaFigura() {
+        return lado * lado;
+    }
+
+    @Override
+    public double getPerimetroFigura() {
+        return lado * 4;
+    }
+
+    @Override
+    public String tipoFigura() {
+        return "Quadrado Reto";
+    }
+
+    @Override
+    public int compareTo(@NotNull FigurasGeometricas o) {
+        if (getAreaFigura() < o.getAreaFigura()){
+            return -1;
+        }
+        if (getAreaFigura() == o.getAreaFigura()){
+            return 0;
+        }
+        if (getAreaFigura() > o.getAreaFigura()){
+            return 1;
+        }
+        return 0;
+    }
+
+}
