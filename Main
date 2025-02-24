@@ -1,0 +1,38 @@
+package interfaces3;
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        RepositorioDeFiguras2D figuras2D = new RepositorioDeFiguras2D();
+
+        System.out.println("------Adicionando------");
+        figuras2D.adicionaFigura(new Circulos(4));
+        figuras2D.adicionaFigura(new Quadrados(6));
+        figuras2D.adicionaFigura(new Quadrados(2));
+        System.out.println(figuras2D);
+
+        System.out.println("------Ordenado por Área------");
+        System.out.println(figuras2D.ordena());
+
+        System.out.println("------Área------");
+        System.out.println(figuras2D.getAreaFigura(0));
+        System.out.println(figuras2D.getAreaFigura(1));
+        System.out.println(figuras2D.getAreaFigura(2));
+
+        System.out.println("------Perímetro------");
+        System.out.println(figuras2D.getPerimetroFigura(0));
+        System.out.println(figuras2D.getPerimetroFigura(1));
+        System.out.println(figuras2D.getPerimetroFigura(2));
+
+        System.out.println("------Tipo------");
+        System.out.println(figuras2D.getTipoFigura(0));
+        System.out.println(figuras2D.getTipoFigura(1));
+        System.out.println(figuras2D.getTipoFigura(2));
+
+        figuras2D.removeFigura(1);
+        figuras2D.removeFigura(0);
+        System.out.println(figuras2D);
+    }
+}
