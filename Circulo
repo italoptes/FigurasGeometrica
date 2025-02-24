@@ -1,0 +1,41 @@
+package interfaces3;
+
+import org.jetbrains.annotations.NotNull;
+
+public class Circulos implements FigurasGeometricas {
+    private double raio;
+
+    public Circulos(double raio) {
+        this.raio = raio;
+    }
+
+    @Override
+    public double getAreaFigura() {
+        return Math.PI * (raio * raio);
+    }
+
+    @Override
+    public double getPerimetroFigura() {
+        return 2 * Math.PI * raio;
+    }
+
+    @Override
+    public String tipoFigura() {
+        return "Circulo Redondo";
+    }
+
+
+    @Override
+    public int compareTo(@NotNull FigurasGeometricas o) {
+        if (getAreaFigura() < o.getAreaFigura()){
+            return -1;
+        }
+        if (getAreaFigura() == o.getAreaFigura()){
+            return 0;
+        }
+        if (getAreaFigura() > o.getAreaFigura()){
+            return 1;
+        }
+        return 0;
+    }
+}
