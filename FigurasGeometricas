@@ -1,0 +1,7 @@
+package interfaces3;
+
+public interface FigurasGeometricas extends Comparable<FigurasGeometricas> {
+    public double getAreaFigura();
+    public double getPerimetroFigura();
+    public String tipoFigura();
+}
